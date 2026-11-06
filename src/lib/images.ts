@@ -2,7 +2,7 @@
 const i = (n: number) => `/images/photo-${n}.webp`;
 
 export const images = {
-  hero: i(21),
+  hero: "/images/cabana-hero.webp",
   cabana: i(20),
   aluminium: i(22),
   about: i(23),

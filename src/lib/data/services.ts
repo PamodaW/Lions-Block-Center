@@ -42,8 +42,8 @@ export const services: Service[] = [
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
 
 export const stats = [
-  { value: "15+", label: "Years of experience" },
-  { value: "200+", label: "Projects delivered" },
+  { value: "10+", label: "Years of experience" },
+  { value: "2+", label: "Projects delivered" },
   { value: "2", label: "Specialist services" },
   { value: "100%", label: "Custom made" },
 ];
