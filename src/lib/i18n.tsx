@@ -36,7 +36,7 @@ const si: Record<string, string> = {
   "Cabana creation & development": "කැබානා නිර්මාණය සහ සංවර්ධනය",
   "Full design-and-build service for garden, poolside and resort cabanas — planned around your space, climate and budget.":
     "ඔබේ ඉඩ, දේශගුණය සහ අයවැය අනුව සැලසුම් කළ උද්‍යාන, පොකුණු අසල සහ රිසෝට් කැබානා සඳහා සම්පූර්ණ සැලසුම් සහ ඉදිකිරීම් සේවාව.",
-  "Concept & 3D design": "සංකල්ප සහ 3D සැලසුම",
+  "Concept & Quote Creation": "සංකල්ප සහ සැලසුම",
   "Structure & roofing": "ව්‍යුහය සහ වහල",
   "Finishes & landscaping": "නිමාවන් සහ භූ දර්ශන",
   "Plan a cabana": "කැබානාවක් සැලසුම් කරන්න",

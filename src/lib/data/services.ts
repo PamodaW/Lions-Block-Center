@@ -20,7 +20,7 @@ export const services: Service[] = [
     short: "Full design-and-build service for garden, poolside and resort cabanas.",
     description:
       "Full design-and-build service for garden, poolside and resort cabanas — planned around your space, climate and budget.",
-    items: ["Concept & 3D design", "Structure & roofing", "Finishes & landscaping"],
+    items: ["Concept & Quote Creation", "Structure & roofing", "Finishes & landscaping"],
     cta: "Plan a cabana",
     image: images.cabana,
     imageAlt: "Cabana under construction",
