@@ -15,8 +15,32 @@ jobs:
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
-          if [ -z "$RENDER_DEPLOY_HOOK_URL" ]; then
-            echo "RENDER_DEPLOY_HOOK_URL secret is not set" >&2
+          # Trim stray whitespace/newlines that sneak in when pasting a secret value.
+          url="$(printf '%s' "$RENDER_DEPLOY_HOOK_URL" | tr -d '[:space:]')"
+
+          if [ -z "$url" ]; then
+            echo "::error::RENDER_DEPLOY_HOOK_URL is empty. Add it under Settings > Secrets and variables > Actions > Repository secrets, then re-run this workflow."
             exit 1
           fi
-          curl --fail --silent --show-error -X POST "$RENDER_DEPLOY_HOOK_URL"
+
+          case "$url" in
+            https://*) ;;
+            *)
+              echo "::error::RENDER_DEPLOY_HOOK_URL must start with https://. Copy the full Deploy Hook URL from Render (Service > Settings > Deploy Hook)."
+              exit 1
+              ;;
+          esac
+
+          status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' -X POST "$url")" || {
+            echo "::error::Could not reach the Render deploy hook (curl failed). Check the hook URL."
+            exit 1
+          }
+
+          echo "Render responded with HTTP $status"
+          case "$status" in
+            2??) echo "Deploy triggered." ;;
+            *)
+              echo "::error::Render rejected the deploy hook with HTTP $status. Create a fresh Deploy Hook in Render and update the secret."
+              exit 1
+              ;;
+          esac
