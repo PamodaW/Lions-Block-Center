@@ -3,10 +3,9 @@ export const site = {
   url: "https://lionsblockcenter.com", // placeholder
   description:
     "Lions Block Center designs and builds outdoor cabanas and fabricates precision aluminium work for homes and businesses.",
-  email: "info@yourdomain.com", // placeholder
+  email: "charithawijesinghe7@gmail.com",
   phone: "0719271263",
   phoneDisplay: "071 927 1263",
-  contactNote: "Address · Email — to be added",
 };
 
 export const nav = [

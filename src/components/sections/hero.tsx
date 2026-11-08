@@ -21,7 +21,7 @@ export function Hero() {
           </div>
         </div>
         <div className="hero-img frame">
-          <Image src={images.hero} alt="Modern cabana by the pool" fill priority sizes="(max-width: 900px) 100vw, 50vw" />
+          <Image src={images.hero} alt="A-frame cabana on a timber deck in the forest" fill priority sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </div>
     </section>

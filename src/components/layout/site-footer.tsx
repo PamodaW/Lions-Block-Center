@@ -1,4 +1,3 @@
-import { T } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -7,7 +6,7 @@ export function SiteFooter() {
       <div className="wrap">
         <span>© {new Date().getFullYear()} {site.name}</span>
         <a className="ul" href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
-        <span><T>{site.contactNote}</T></span>
+        <a className="ul" href={`mailto:${site.email}`}>{site.email}</a>
       </div>
     </footer>
   );
